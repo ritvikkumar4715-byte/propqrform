@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propyter - Real Estate Investment & Tours</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="auth-gate" class="auth-overlay">
+        <div class="auth-card">
+            <div class="auth-logo-text">
+                <img src="propryter-logo.png" alt="Propyter Logo" style="height: 32px; width: auto; display: block;">
+            </div>
+            <h2>Private Concierge Access</h2>
+            <p>Enter your details below to unlock exclusive property tours and aerial portfolios.</p>
+            
+            <form id="auth-form" onsubmit="handleAuth(event)">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="user-name" placeholder="Falana Dhinkana" required>
+                </div>
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="user-phone" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="user-email" placeholder="example@example.com" required>
+                </div>
+                <button type="submit" class="gold-btn full-width" style="margin-top: 8px;">Enter Showcase →</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="main-app" class="app-container" style="display: none;">
+        
+        <header class="top-bar">
+            <div class="logo" onclick="resetToHome()">
+                <img src="propryter-logo.png" alt="Propyter Logo">
+            </div>
+            <a href="https://www.propryter.com" target="_blank" class="visit-us-btn">Visit Us ↗</a>
+        </header>
+
+        <section class="hero-section">
+            <span class="sub-badge">INVESTMENT CONCIERGE PORTFOLIO</span>
+            <h1>Curated Real Estate <span>Tours & Aerials</span></h1>
+            <p>Welcome, <span id="display-name" style="color: var(--gold); font-weight: 600;"></span>. Access high-definition walkthroughs and live drone capture feeds tailored for you.</p>
+        </section>
+
+        <section class="categories-section">
+            <h2>Select Portfolio</h2>
+            <div class="category-grid">
+                <a href="NashikProperties.html" class="cat-card">
+                    <div class="cat-number">01</div>
+                    <h3>Placeholder 1</h3>
+                    <span class="explore-link">Explore Tours →</span>
+                </a>
+                <a href="NashikProperties.html" class="cat-card">
+                    <div class="cat-number">02</div>
+                    <h3>Placeholder 2</h3>
+                    <span class="explore-link">Explore Tours →</span>
+                </a>
+                <a href="NashikProperties.html" class="cat-card">
+                    <div class="cat-number">03</div>
+                    <h3>Placeholder 3</h3>
+                    <span class="explore-link">Explore Tours →</span>
+                </a>
+                <a href="NashikProperties.html" class="cat-card">
+                    <div class="cat-number">04</div>
+                    <h3>Placeholder 4</h3>
+                    <span class="explore-link">Explore Tours →</span>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Propyter.</p>
+            <button onclick="logoutDevice()" class="logout-btn">Reset Device Credentials</button>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
