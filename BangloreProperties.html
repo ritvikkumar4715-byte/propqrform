@@ -6,6 +6,9 @@
     <title>Propryter - Banglore Properties</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PDF.js Core Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 </head>
 <body>
 
@@ -49,29 +52,71 @@
             <h2>Project Brochure</h2>
         </div>
 
-        <div class="pdf-scroll-container">
-            <iframe src="Properties/11pdf.pdf" width="100%" height="100%" style="border: none;">
-                <p>Your browser does not support PDFs. You can <a href="Properties/11pdf.pdf" target="_blank">download the PDF here</a>.</p>
-            </iframe>
+        <!-- Embedded Viewer Container -->
+        <div class="pdf-scroll-container" style="width: 100%; max-height: 650px; overflow-y: auto; background: #525659; border-radius: 8px; padding: 12px 0; text-align: center;">
+            <div id="pdf-viewer"></div>
+            
+            <!-- Fallback UI (hidden by default) -->
+            <div id="pdf-fallback" style="display: none; padding: 40px 20px; background: #f8f9fa; border-radius: 8px; margin: 10px;">
+                <p style="margin-bottom: 16px; color: #333; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif;">
+                    Interactive PDF preview is unavailable.
+                </p>
+                <a href="Properties/11pdf.pdf" target="_blank" class="visit-us-btn" style="display: inline-block; text-decoration: none;">
+                    Open / Download Brochure PDF ↗
+                </a>
+            </div>
         </div>
+
+        <script>
+            // Set worker path matching version 2.16.105
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+            const pdfUrl = 'Properties/11pdf.pdf';
+            const viewer = document.getElementById('pdf-viewer');
+            const fallback = document.getElementById('pdf-fallback');
+
+            // Attempt PDF loading & canvas rendering
+            pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    pdf.getPage(pageNum).then(page => {
+                        const canvas = document.createElement('canvas');
+                        canvas.style.display = 'block';
+                        canvas.style.margin = '0 auto 16px auto';
+                        canvas.style.maxWidth = '95%';
+                        canvas.style.height = 'auto';
+                        canvas.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+                        canvas.style.borderRadius = '4px';
+                        viewer.appendChild(canvas);
+
+                        const context = canvas.getContext('2d');
+                        const viewport = page.getViewport({ scale: 1.5 });
+
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        page.render({
+                            canvasContext: context,
+                            viewport: viewport
+                        });
+                    });
+                }
+            }).catch(err => {
+                console.warn('PDF.js inline render skipped/failed:', err);
+                viewer.style.display = 'none';
+                fallback.style.display = 'block';
+            });
+        </script>
 
         <div class="page-header-block">
             <h2>Virtual Site Tour</h2>
         </div>
 
         <div class="media-wrapper portrait-media">
-            <video id="tourVideo2" controls>
+            <video id="tourVideo2" controls preload="metadata">
                 <source src="Properties/7video.mp4" type="video/mp4">
                 Your browser does not support video.
             </video>
         </div>
-
-        <script>
-            const video = document.getElementById('tourVideo');
-            video.addEventListener('loadedmetadata', function() {
-                video.currentTime = 6;
-            });
-        </script>
 
         <script>
             const video2 = document.getElementById('tourVideo2');

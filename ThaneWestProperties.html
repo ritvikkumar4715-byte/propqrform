@@ -6,6 +6,9 @@
     <title>Propryter - Thane West Properties</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PDF.js Core Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 </head>
 <body>
 
@@ -49,21 +52,96 @@
             <h2>Project Brochure</h2>
         </div>
 
-        <div class="pdf-scroll-container">
-            <iframe src="Properties/8pdf.pdf" width="100%" height="100%" style="border: none;">
-                <p>Your browser does not support PDFs. You can <a href="Properties/8pdf.pdf" target="_blank">download the PDF here</a>.</p>
-            </iframe>
+        <!-- First PDF Embedded Viewer -->
+        <div class="pdf-scroll-container" style="width: 100%; max-height: 650px; overflow-y: auto; background: #525659; border-radius: 8px; padding: 12px 0; text-align: center; margin-bottom: 24px;">
+            <div id="pdf-viewer-1"></div>
+            
+            <!-- Fallback UI for First PDF -->
+            <div id="pdf-fallback-1" style="display: none; padding: 40px 20px; background: #f8f9fa; border-radius: 8px; margin: 10px;">
+                <p style="margin-bottom: 16px; color: #333; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif;">
+                    Interactive PDF preview is unavailable.
+                </p>
+                <a href="Properties/8pdf.pdf" target="_blank" class="visit-us-btn" style="display: inline-block; text-decoration: none;">
+                    Open / Download Brochure 1 (PDF) ↗
+                </a>
+            </div>
         </div>
-        <div class="pdf-scroll-container">
-            <iframe src="Properties/9pdf.pdf" width="100%" height="100%" style="border: none;">
-                <p>Your browser does not support PDFs. You can <a href="Properties/9pdf.pdf" target="_blank">download the PDF here</a>.</p>
-            </iframe>
+
+        <!-- Second PDF Embedded Viewer -->
+        <div class="pdf-scroll-container" style="width: 100%; max-height: 650px; overflow-y: auto; background: #525659; border-radius: 8px; padding: 12px 0; text-align: center; margin-bottom: 24px;">
+            <div id="pdf-viewer-2"></div>
+            
+            <!-- Fallback UI for Second PDF -->
+            <div id="pdf-fallback-2" style="display: none; padding: 40px 20px; background: #f8f9fa; border-radius: 8px; margin: 10px;">
+                <p style="margin-bottom: 16px; color: #333; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif;">
+                    Interactive PDF preview is unavailable.
+                </p>
+                <a href="Properties/9pdf.pdf" target="_blank" class="visit-us-btn" style="display: inline-block; text-decoration: none;">
+                    Open / Download Brochure 2 (PDF) ↗
+                </a>
+            </div>
         </div>
-        <div class="pdf-scroll-container">
-            <iframe src="Properties/10pdf.pdf" width="100%" height="100%" style="border: none;">
-                <p>Your browser does not support PDFs. You can <a href="Properties/10pdf.pdf" target="_blank">download the PDF here</a>.</p>
-            </iframe>
+
+        <!-- Third PDF Embedded Viewer -->
+        <div class="pdf-scroll-container" style="width: 100%; max-height: 650px; overflow-y: auto; background: #525659; border-radius: 8px; padding: 12px 0; text-align: center;">
+            <div id="pdf-viewer-3"></div>
+            
+            <!-- Fallback UI for Third PDF -->
+            <div id="pdf-fallback-3" style="display: none; padding: 40px 20px; background: #f8f9fa; border-radius: 8px; margin: 10px;">
+                <p style="margin-bottom: 16px; color: #333; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif;">
+                    Interactive PDF preview is unavailable.
+                </p>
+                <a href="Properties/10pdf.pdf" target="_blank" class="visit-us-btn" style="display: inline-block; text-decoration: none;">
+                    Open / Download Brochure 3 (PDF) ↗
+                </a>
+            </div>
         </div>
+
+        <script>
+            // Set worker path matching version 2.16.105
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+            // Function to render PDF pages in a target container
+            function renderPDF(pdfUrl, viewerId, fallbackId) {
+                const viewer = document.getElementById(viewerId);
+                const fallback = document.getElementById(fallbackId);
+
+                pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+                    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                        pdf.getPage(pageNum).then(page => {
+                            const canvas = document.createElement('canvas');
+                            canvas.style.display = 'block';
+                            canvas.style.margin = '0 auto 16px auto';
+                            canvas.style.maxWidth = '95%';
+                            canvas.style.height = 'auto';
+                            canvas.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+                            canvas.style.borderRadius = '4px';
+                            viewer.appendChild(canvas);
+
+                            const context = canvas.getContext('2d');
+                            const viewport = page.getViewport({ scale: 1.5 });
+
+                            canvas.height = viewport.height;
+                            canvas.width = viewport.width;
+
+                            page.render({
+                                canvasContext: context,
+                                viewport: viewport
+                            });
+                        });
+                    }
+                }).catch(err => {
+                    console.warn(`PDF.js inline render skipped/failed for ${pdfUrl}:`, err);
+                    viewer.style.display = 'none';
+                    fallback.style.display = 'block';
+                });
+            }
+
+            // Render all three PDF brochures
+            renderPDF('Properties/8pdf.pdf', 'pdf-viewer-1', 'pdf-fallback-1');
+            renderPDF('Properties/9pdf.pdf', 'pdf-viewer-2', 'pdf-fallback-2');
+            renderPDF('Properties/10pdf.pdf', 'pdf-viewer-3', 'pdf-fallback-3');
+        </script>
 
         <div class="prop-content drone-section">
             <h3>Interactive Drone View</h3>
