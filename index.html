@@ -20,7 +20,7 @@
             <form id="auth-form" onsubmit="handleAuth(event)">
                 <div class="input-group">
                     <label>Full Name</label>
-                    <input type="text" id="user-name" placeholder="Falana Dhinkana" required>
+                    <input type="text" id="user-name" placeholder="Your Name" required>
                 </div>
                 <div class="input-group">
                     <label>Phone Number</label>
@@ -30,6 +30,37 @@
                     <label>Email Address</label>
                     <input type="email" id="user-email" placeholder="example@example.com" required>
                 </div>
+
+                <div class="input-group">
+                    <label>What service are you interested in?</label>
+                    <label class="sub-label">(Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" value="Buying Property in India"> Buying Property in India
+                        </label>
+                        <label>
+                            <input type="checkbox" value="Selling Property in India"> Selling Property in India
+                        </label>
+                        <label>
+                            <input type="checkbox" value="Real Estate Investment Opportunities"> Real Estate Investment Opportunities
+                        </label>
+                        <label>
+                            <input type="checkbox" value="Property Management"> Property Management
+                        </label>
+                        <label>
+                            <input type="checkbox" value="Rental / Leasing Management"> Rental / Leasing Management
+                        </label>
+                        <label>
+                            <input type="checkbox" value="Property Resale Assistance"> Property Resale Assistance
+                        </label>
+                        <label class="other-label">
+                            <input type="checkbox" id="other-checkbox" value="Other"> 
+                            <span>Other:</span>
+                            <input type="text" id="other-text-input" class="other-input" placeholder="Please specify..." onclick="document.getElementById('other-checkbox').checked = true;">
+                        </label>
+                    </div>
+                </div>
+
                 <button type="submit" class="gold-btn full-width" style="margin-top: 8px;">Enter Showcase →</button>
             </form>
         </div>
@@ -58,19 +89,29 @@
                     <h3>BelAir Properties - Nashik</h3>
                     <span class="explore-link">Explore Tours →</span>
                 </a>
-                <a href="NashikProperties.html" class="cat-card">
+                <a href="ThaneProperties.html" class="cat-card">
                     <div class="cat-number">02</div>
-                    <h3>Placeholder 2</h3>
+                    <h3>Avatara: The Forest Kingdom - Thane West</h3>
                     <span class="explore-link">Explore Tours →</span>
                 </a>
-                <a href="NashikProperties.html" class="cat-card">
+                <a href="ThaneProperties2.html" class="cat-card">
                     <div class="cat-number">03</div>
-                    <h3>Placeholder 3</h3>
+                    <h3>Piramal Vaikunth: Vidhaan - Thane West</h3>
                     <span class="explore-link">Explore Tours →</span>
                 </a>
-                <a href="NashikProperties.html" class="cat-card">
+                <a href="MulundProperties.html" class="cat-card">
                     <div class="cat-number">04</div>
-                    <h3>Placeholder 4</h3>
+                    <h3>Piramal Vaikunth: Revanta - Mulund</h3>
+                    <span class="explore-link">Explore Tours →</span>
+                </a>
+                <a href="ThaneWestProperties.html" class="cat-card">
+                    <div class="cat-number">05</div>
+                    <h3>Estella: Kalpataru Park City - Thane West</h3>
+                    <span class="explore-link">Explore Tours →</span>
+                </a>
+                <a href="BangloreProperties.html" class="cat-card">
+                    <div class="cat-number">06</div>
+                    <h3>The Empyrean Villa Township - Banglore</h3>
                     <span class="explore-link">Explore Tours →</span>
                 </a>
             </div>

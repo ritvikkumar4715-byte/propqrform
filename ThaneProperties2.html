@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propryter - Thane Properties</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="tour-page-container">
+        <header class="top-bar">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="propryter-logo.png" alt="Propyter Logo">
+            </div>
+            <a href="https://www.propryter.com" target="_blank" class="visit-us-btn">Visit Us ↗</a>
+        </header>
+
+        <a href="index.html" class="back-link">← Back to Portfolios</a>
+        
+        <div class="page-header-block">
+            <span class="sub-badge">EXCLUSIVE SHOWCASE</span>
+            <h2>Piramal Vaikunth: Vidhaan</h2>
+        </div>
+
+        <div class="prop-content" style="padding: 0 0 16px 0;">
+            <p class="prop-loc"><b>Luxurious 2 & 3 BHK Homes Starts from ₹ 1.57 Cr Onwards</b></p>
+            <p class="prop-desc">Old Mumbai - Agra Road, Balkum Naka Balkum, Thane West, Thane, Maharashtra</p>
+            <br>
+            
+            <p class="prop-desc"><b>Developer:</b> Piramal Realty</p>
+            <p class="prop-desc"><b>Status:</b> Phase 2 Under Construction</p>
+            <p class="prop-desc"><b>Expected Possession Date:</b> Oct 2032</p>
+            <p class="prop-desc"><b>RERA Status:</b> Approved</p>
+            <p class="prop-desc"><b>Price Range:</b> ₹1.59 Cr - ₹3.34 Cr onwards</p>
+            <p class="prop-desc"><b>Project Area:</b> 32 Acres</p>
+            <p class="prop-desc"><b>No. of Floors:</b> 51 Storeys</p>
+            <p class="prop-desc"><b>Carpet Area:</b> 719 - 1,049 sq. ft.</p>
+            <br>
+            <p class="prop-desc">With a remarkable response to phase 1, Piramal Vaikunth is launching its phase 2, a flourishing community amid the sprawling natural landscapes in Balkum, Thane. The stunning elevations comprise 2 BHK & 3 BHK apartments with a designer modular kitchen with smooth finishings. Exclusive Digi-Select 2 BHK homes are equipped with motion sensors, Amazon Echo, smart door locks, temperature & lighting control, etc. The spacious balconies of your residences treat you to mesmerising views of the Thane Creek and Yeoor Hills. This mixed-use development features around 60,000 sq. ft. of amenities space, including 40% of open space. Moreover, you can access exclusive amenities like an ISKCON temple within the premises, treehouses, an amphitheatre, a swimming pool, a pet park, a cafe, a yoga zone, etc.</p>
+
+            <p class="prop-desc">Situated in the booming neighbourhood of Thane, your residence is close to the city's top facilities. It includes DAV Public School, C P Goenka International School, Jupiter Hospital, Narayan e-Techno School, Highland Super Speciality Hospital, R Mall, Viviana Mall, Dmart, NaMo Grand Central Park and more. There is an upcoming Balkum metro station within 5 minutes of reach. You will also be close to the Eastern Express Highway, LBS Marg and Ghodbunder Road. Thane railway station is also easy to access from here. So, Piramal Vaikunth presents an appealing community in the thriving neighbourhood of Balkum, Thane.</p>
+            
+        </div>
+
+        <div class="page-header-block">
+            <h2>Project Brochure</h2>
+        </div>
+
+        <div class="pdf-scroll-container">
+            <iframe src="Properties/4pdf.pdf" width="100%" height="100%" style="border: none;">
+                <p>Your browser does not support PDFs. You can <a href="Properties/4pdf.pdf" target="_blank">download the PDF here</a>.</p>
+            </iframe>
+        </div>
+        <div class="pdf-scroll-container">
+            <iframe src="Properties/5pdf.pdf" width="100%" height="100%" style="border: none;">
+                <p>Your browser does not support PDFs. You can <a href="Properties/5pdf.pdf" target="_blank">download the PDF here</a>.</p>
+            </iframe>
+        </div>
+
+        <div class="page-header-block">
+            <h2>Project Walkthrough</h2>
+        </div>
+
+        <div class="media-wrapper portrait-media">
+            <video id="tourVideo" controls>
+                <source src="Properties/4video.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <div class="page-header-block">
+            <h2>Demo Flat Walkthrough</h2>
+        </div>
+
+        <div class="media-wrapper portrait-media">
+            <video id="tourVideo2" controls>
+                <source src="Properties/5video.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <script>
+            const video = document.getElementById('tourVideo');
+            video.addEventListener('loadedmetadata', function() {
+                video.currentTime = 2;
+            });
+        </script>
+
+        <script>
+            const video2 = document.getElementById('tourVideo2');
+            video2.addEventListener('loadedmetadata', function() {
+                video2.currentTime = 2;
+            });
+        </script>
+
+        <div class="page-header-block">
+            <h2>Contact Us For More Details</h2>
+            <h3><b>United States - Massachusetts</b></h3>
+            <p><b>+1 (207) 710 6000<br><i>Mon-Sat 9:00 AM - 6:30 PM EST</i></b></p>
+            <h3><b>India - Bengluru Head Office</b></h3>
+            <p><b>+91 (961) 127 2541<br><i>Mon-Sat 9:30 AM - 7:00 PM IST</i></b></p><br>
+            <h3><b>contact@propryter.com</b></h3>
+        </div>
+
+    </div>
+
+</body>
+</html>

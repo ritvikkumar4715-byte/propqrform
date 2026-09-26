@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propryter - Banglore Properties</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="tour-page-container">
+        <header class="top-bar">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="propryter-logo.png" alt="Propyter Logo">
+            </div>
+            <a href="https://www.propryter.com" target="_blank" class="visit-us-btn">Visit Us ↗</a>
+        </header>
+
+        <a href="index.html" class="back-link">← Back to Portfolios</a>
+        
+        <div class="page-header-block">
+            <span class="sub-badge">EXCLUSIVE SHOWCASE</span>
+            <h2>The Empyrean Villa Township</h2>
+        </div>
+
+        <div class="prop-content" style="padding: 0 0 16px 0;">
+            <p class="prop-loc"><b>Luxurious 2 & 3 BHK Starts At ₹ 89 Lacs Onwards</b></p>
+            <p class="prop-desc">In Front of Government School No. 125, Behind Muktidham Mandir, Datta Mandir Road, Nashik Road, Nashik</p>
+            <br>
+            
+            <p class="prop-desc"><b>Developer:</b> ACE Realty</p>
+            <p class="prop-desc"><b>Status:</b> Under Construction</p>
+            <p class="prop-desc"><b>Expected Possession Date:</b> 23rd Sep 2031</p>
+            <p class="prop-desc"><b>RERA Status:</b> Approved</p>
+            <p class="prop-desc"><b>Price Range:</b> ₹89 lakh - ₹1.60 crore</p>
+            <p class="prop-desc"><b>Project Area:</b> 8.5 Acre</p>
+            <p class="prop-desc"><b>No. of Floors:</b> G+ 47 Storey Towers</p>
+            <br>
+            <p class="prop-desc">The Empyrean is more than Bengaluru's first truly integrated suburban township, it is a vision to recreate the charm of Bengaluru's yesteryears. Designed with tree-lined streets, lush green parks, and expansive open spaces, it offers a haven of happiness, rightly earning the title A Town Full of Happiness.</p>
+
+            <p class="prop-desc">Why invest in The Empyrean?<br>
+            ✔️ 200+ acres of lush, open township<br>
+            ✔️ Only 10 homes per acre – low-rise, low-density living<br>
+            ✔️ 212-acre green reserve & natural lake right next door<br>
+            ✔️ 500+ families already residing<br>
+            ✔️ 700+ villas built and sold<br>
+            ✔️ 50+ world-class amenities<br>
+            ✔️ Club Empyrean – for leisure, wellness & community<br>
+            ✔️ Fresh air, low AQI, and a lifestyle close to nature<br><br>
+            🛣️ 2 mins from STRR (now operational)<br>
+            📍 20 mins from Sarjapur<br>
+            📍 30 mins from Whitefield<br>
+            ✈️ 45 mins from Bengaluru Intl. Airport</p>
+            
+        </div>
+
+        <div class="page-header-block">
+            <h2>Project Brochure</h2>
+        </div>
+
+        <div class="pdf-scroll-container">
+            <iframe src="Properties/11pdf.pdf" width="100%" height="100%" style="border: none;">
+                <p>Your browser does not support PDFs. You can <a href="Properties/11pdf.pdf" target="_blank">download the PDF here</a>.</p>
+            </iframe>
+        </div>
+
+        <div class="page-header-block">
+            <h2>Virtual Site Tour</h2>
+        </div>
+
+        <div class="media-wrapper portrait-media">
+            <video id="tourVideo2" controls>
+                <source src="Properties/7video.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <script>
+            const video = document.getElementById('tourVideo');
+            video.addEventListener('loadedmetadata', function() {
+                video.currentTime = 6;
+            });
+        </script>
+
+        <script>
+            const video2 = document.getElementById('tourVideo2');
+            video2.addEventListener('loadedmetadata', function() {
+                video2.currentTime = 2;
+            });
+        </script>
+
+        <div class="page-header-block">
+            <h2>Contact Us For More Details</h2>
+            <h3><b>United States - Massachusetts</b></h3>
+            <p><b>+1 (207) 710 6000<br><i>Mon-Sat 9:00 AM - 6:30 PM EST</i></b></p>
+            <h3><b>India - Bengluru Head Office</b></h3>
+            <p><b>+91 (961) 127 2541<br><i>Mon-Sat 9:30 AM - 7:00 PM IST</i></b></p><br>
+            <h3><b>contact@propryter.com</b></h3>
+        </div>
+    </div>
+
+</body>
+</html>

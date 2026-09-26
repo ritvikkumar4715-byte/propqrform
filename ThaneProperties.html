@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propryter - Thane Properties</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="tour-page-container">
+        <header class="top-bar">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="propryter-logo.png" alt="Propyter Logo">
+            </div>
+            <a href="https://www.propryter.com" target="_blank" class="visit-us-btn">Visit Us ↗</a>
+        </header>
+
+        <a href="index.html" class="back-link">← Back to Portfolios</a>
+        
+        <div class="page-header-block">
+            <span class="sub-badge">EXCLUSIVE SHOWCASE</span>
+            <h2>Avatara: The Forest Kingdom</h2>
+        </div>
+
+        <div class="prop-content" style="padding: 0 0 16px 0;">
+            <p class="prop-loc"><b>Luxurious 2 & 3 BHK Starts At ₹ 89 Lacs Onwards</b></p>
+            <p class="prop-desc">In Front of Government School No. 125, Behind Muktidham Mandir, Datta Mandir Road, Nashik Road, Nashik</p>
+            <br>
+            
+            <p class="prop-desc"><b>Developer:</b> ACE Realty</p>
+            <p class="prop-desc"><b>Status:</b> Under Construction</p>
+            <p class="prop-desc"><b>Expected Possession Date:</b> 23rd Sep 2031</p>
+            <p class="prop-desc"><b>RERA Status:</b> Approved</p>
+            <p class="prop-desc"><b>Price Range:</b> ₹89 lakh - ₹1.60 crore</p>
+            <p class="prop-desc"><b>Project Area:</b> 8.5 Acre</p>
+            <p class="prop-desc"><b>No. of Floors:</b> G+ 47 Storey Towers</p>
+            <br>
+            <p class="prop-desc">Avatara The Forest Kingdom is a green and serene residential development coming up near Ghodbunder Road, Thane. This 2-tower-strong landmark will feature premium 2 BHK and 3 BHK residences overlooking the greenest part of Thane and the pristine Thane Creek. Each home in this enclave has been royally designed to offer a pure blend of indulgence and bliss. The Greendom Club and 50+ curated amenities, including a mini theatre, banquet hall, business centre, workpods, indoor games zone, gymnasium, badminton court, aerobics & yoga room, pickleball court, multipurpose court, cricket turf, and miyawaki plantation, make it a resident’s paradise.</p>
+
+            <p class="prop-desc">Situated in the greenest hub of Thane, Avatara The Forest Kingdom is minutes away from amenities such as Podar International School, Hiranandani School, AP Shah Institute of Technology, Tieten Medicity Hospital, Hiranandani Hospital, Horizon Prime Hospital, TCS Campus, R Mall, Hypercity Mall, and D-Mart. The Anandnagar Vadavali Road connects this enclave with Ghodbunder Road and, through it, to important navigation corridors. The Kasarvadavali Metro Station on Line 4 is just 2 minutes away. The Chhatrapati Shivaji Maharaj International Airport is just a 1-hour drive away. So, come and live an aspirational life at Avatara The Forest Kingdom in Thane.</p>
+            
+        </div>
+
+        <div class="page-header-block">
+            <h2>Project Brochure</h2>
+        </div>
+
+        <div class="pdf-scroll-container">
+            <iframe src="Properties/2pdf.pdf" width="100%" height="100%" style="border: none;">
+                <p>Your browser does not support PDFs. You can <a href="Properties/2pdf.pdf" target="_blank">download the PDF here</a>.</p>
+            </iframe>
+        </div>
+        <div class="pdf-scroll-container">
+            <iframe src="Properties/3pdf.pdf" width="100%" height="100%" style="border: none;">
+                <p>Your browser does not support PDFs. You can <a href="Properties/3pdf.pdf" target="_blank">download the PDF here</a>.</p>
+            </iframe>
+        </div>
+
+        <div class="page-header-block">
+            <h2>Virtual Site Tour</h2>
+        </div>
+
+        <div class="media-wrapper portrait-media">
+            <video id="tourVideo2" controls>
+                <source src="Properties/3video.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <script>
+            const video = document.getElementById('tourVideo');
+            video.addEventListener('loadedmetadata', function() {
+                video.currentTime = 6;
+            });
+        </script>
+
+        <script>
+            const video2 = document.getElementById('tourVideo2');
+            video2.addEventListener('loadedmetadata', function() {
+                video2.currentTime = 2;
+            });
+        </script>
+
+        <div class="page-header-block">
+            <h2>Current Construction Status</h2>
+        </div>
+
+        <img src="Properties/1image.png" alt="Current Construction Status" style="width: 100%; height: auto; border-radius: 8px;">
+
+        <div class="page-header-block">
+            <h2>Contact Us For More Details</h2>
+            <h3><b>United States - Massachusetts</b></h3>
+            <p><b>+1 (207) 710 6000<br><i>Mon-Sat 9:00 AM - 6:30 PM EST</i></b></p>
+            <h3><b>India - Bengluru Head Office</b></h3>
+            <p><b>+91 (961) 127 2541<br><i>Mon-Sat 9:30 AM - 7:00 PM IST</i></b></p><br>
+            <h3><b>contact@propryter.com</b></h3>
+        </div>
+    </div>
+
+</body>
+</html>

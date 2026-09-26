@@ -16,16 +16,42 @@ function handleAuth(event) {
     const phone = document.getElementById("user-phone").value.trim();
     const email = document.getElementById("user-email").value.trim();
 
+    // 1. Gather selected services
+    const selectedServices = [];
+    const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
+    
+    checkboxes.forEach(cb => {
+        if (cb.id === "other-checkbox") {
+            const otherText = document.getElementById("other-text-input").value.trim();
+            if (otherText) {
+                selectedServices.push(`Other: ${otherText}`);
+            } else {
+                selectedServices.push("Other");
+            }
+        } else {
+            selectedServices.push(cb.value);
+        }
+    });
+
+    const servicesString = selectedServices.join("; ");
+
     if (name && phone && email) {
-        const userData = { name, phone, email, timestamp: new Date().toISOString() };
+        const userData = { 
+            name, 
+            phone, 
+            email, 
+            services: selectedServices,
+            timestamp: new Date().toISOString() 
+        };
         localStorage.setItem("propyter_user", JSON.stringify(userData));
 
-        const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeobt2gUT_QAGB9EgROPCo_OHRIWVXr0hLRkaa_IScZ1RMbNg/formResponse";
+        const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScSbSh5TmdpC6WNTmwMm3zD1szJ-V83cXyo3SxA66N-Xy6yJw/formResponse";
         
         const formData = new FormData();
-        formData.append("entry.892743565", name);
-        formData.append("entry.1102492608", phone);
-        formData.append("entry.78828674", email);
+        formData.append("entry.1835524826", name);
+        formData.append("entry.1431385572", phone);
+        formData.append("entry.1536355563", email);
+        formData.append("entry.1409921329", servicesString);
 
         fetch(formUrl, {
             method: "POST",

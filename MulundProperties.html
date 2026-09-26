@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propryter - Mulund Properties</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="tour-page-container">
+        <header class="top-bar">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="propryter-logo.png" alt="Propyter Logo">
+            </div>
+            <a href="https://www.propryter.com" target="_blank" class="visit-us-btn">Visit Us ↗</a>
+        </header>
+
+        <a href="index.html" class="back-link">← Back to Portfolios</a>
+        
+        <div class="page-header-block">
+            <span class="sub-badge">EXCLUSIVE SHOWCASE</span>
+            <h2>Piramal Vaikunth: Revanta</h2>
+        </div>
+
+        <div class="prop-content" style="padding: 0 0 16px 0;">
+            <p class="prop-loc"><b>Luxurious Studio, 1, 1.5, 2, 2.5, 3, 3.5, 4 and 5 BHK configurations, varying by tower and phase</b></p>
+            <p class="prop-desc">Near Nirmal Lifestyle Mall, Moti Nagar, Mulund Colony, Mulund West, Mumbai, Maharashtra 400080</p>
+            <br>
+            
+            <p class="prop-desc"><b>Developer:</b> Piramal Realty</p>
+            <p class="prop-desc"><b>Status:</b> 4 towers delivered; Raynav topped out and under construction; Rayansh under construction</p>
+            <p class="prop-desc"><b>Expected Possession Date:</b> Tower 5 Raynav: November 2028; Tower 6 Rayansh: July 2030</p>
+            <p class="prop-desc"><b>RERA Status:</b> Approved</p>
+            <p class="prop-desc"><b>Price Range:</b> ₹2.39 crore - ₹4.49 crore</p>
+            <p class="prop-desc"><b>Project Area:</b> 12 Acres</p>
+            <p class="prop-desc"><b>No. of Floors:</b> 48 Storeys</p>
+            <p class="prop-desc"><b>Carpet Area:</b> 854 - 2,958 sq. ft.</p>
+            <br>
+            <p class="prop-desc">Piramal Revanta presents an evolved style of contemporary living in the new cultural, financial, and commercial heart of Mumbai – Mulund. An urban oasis away from the hustle of the city, the high-rise, near-ready development is spread across 12 acres of naturescapes and is poised at the edge of almost 25000 acres of Sanjay Gandhi National Park.</p>
+            <br>
+            <p class="prop-desc"><b>Seamless Connectivity</b></p>
+
+            <p class="prop-desc"><b>Three way Access:</b></p>
+
+                <p class="prop-desc">Lal Bahadur Shastri Road (LBS)</p>
+                <p class="prop-desc">Proposed Goregaon Mulund Link Road (GMLR)</p>
+                <p class="prop-desc">Marathon Avenue Access</p>
+
+            <p class="prop-desc"><b>Connectivity:</b></p>
+
+                <p class="prop-desc">Proposed Sonapur Metro Station (0.75 km)</p>
+                <p class="prop-desc">Nahur Railway Station (1.7 km)</p>
+                <p class="prop-desc">Eastern Express Highway (3 km)</p>
+                <p class="prop-desc">Mulund Railway Station (4.9 km)</p>
+                <p class="prop-desc">Thane Railway Station (6.3 km)</p>
+
+        </div>
+
+        <div class="page-header-block">
+            <h2>Project Brochure</h2>
+        </div>
+
+        <div class="pdf-scroll-container">
+            <iframe src="Properties/6pdf.pdf" width="100%" height="100%" style="border: none;">
+                <p>Your browser does not support PDFs. You can <a href="Properties/6pdf.pdf" target="_blank">download the PDF here</a>.</p>
+            </iframe>
+        </div>
+        <div class="pdf-scroll-container">
+            <iframe src="Properties/7pdf.pdf" width="100%" height="100%" style="border: none;">
+                <p>Your browser does not support PDFs. You can <a href="Properties/7pdf.pdf" target="_blank">download the PDF here</a>.</p>
+            </iframe>
+        </div>
+
+        <div class="page-header-block">
+            <h2>Site Walkthrough</h2>
+        </div>
+
+        <div class="media-wrapper portrait-media">
+            <video id="tourVideo2" controls>
+                <source src="Properties/6video.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <script>
+            const video = document.getElementById('tourVideo');
+            video.addEventListener('loadedmetadata', function() {
+                video.currentTime = 6;
+            });
+        </script>
+
+        <script>
+            const video2 = document.getElementById('tourVideo2');
+            video2.addEventListener('loadedmetadata', function() {
+                video2.currentTime = 2;
+            });
+        </script>
+
+        <div class="page-header-block">
+            <h2>Contact Us For More Details</h2>
+            <h3><b>United States - Massachusetts</b></h3>
+            <p><b>+1 (207) 710 6000<br><i>Mon-Sat 9:00 AM - 6:30 PM EST</i></b></p>
+            <h3><b>India - Bengluru Head Office</b></h3>
+            <p><b>+91 (961) 127 2541<br><i>Mon-Sat 9:30 AM - 7:00 PM IST</i></b></p><br>
+            <h3><b>contact@propryter.com</b></h3>
+        </div>
+
+    </div>
+
+</body>
+</html>
